@@ -1,0 +1,15 @@
+SELECT
+c.CategoryName,
+count(*) AS CategoryCount
+FROM(Select * From Categories c INNER JOIN Products p ON c.CategoryID = p.CategoryID) j
+Group By
+c.CategoryName
+Having
+c.CategoryName = 'Beverages'
+OR
+c.CategoryName = 'Produce';
+
+Number of Records: 2
+CategoryName	CategoryCount
+Beverages 	12
+Produce 	5
