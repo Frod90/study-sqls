@@ -1,0 +1,18 @@
+Select
+p.CategoryID,
+Count(*) AS CategoryCount
+From
+(SELECT * FROM Categories c INNER JOIN Products p ON c.CategoryID = p.CategoryID) j
+Group By
+p.CategoryID
+Having
+Count(*) >= 10;
+
+
+Number of Records: 5
+CategoryID	CategoryCount
+1 	12
+2 	12
+3 	13
+4 	10
+8 	12
