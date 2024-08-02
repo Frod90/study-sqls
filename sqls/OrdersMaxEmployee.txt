@@ -1,0 +1,41 @@
+SELECT
+    j.LastName,
+    j.FirstName,
+    j.OrderCount
+FROM
+    (SELECT
+        e.LastName,
+        e.FirstName,
+        COUNT(*) AS OrderCount
+    FROM
+        Orders o
+    INNER JOIN
+        Employees e
+    ON
+        o.EmployeeID = e.EmployeeID
+    GROUP BY
+        e.LastName,
+        e.FirstName
+    ) AS j
+WHERE
+    j.OrderCount =
+    (SELECT
+        MAX(OrderCount)
+    FROM
+    (SELECT
+    COUNT(*) AS OrderCount
+    FROM
+    Orders o
+    INNER JOIN
+    Employees e
+    ON
+    o.EmployeeID = e.EmployeeID
+    GROUP BY
+    e.LastName,
+    e.FirstName
+    ));
+
+
+Number of Records: 1
+LastName	FirstName	OrderCount
+Peacock 	Margaret 	40
