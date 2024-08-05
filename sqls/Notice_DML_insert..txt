@@ -1,0 +1,31 @@
+use db_notice;
+
+
+INSERT INTO `WRITER` (`WRITER_ID`, `WRITER`) VALUES
+(1, '관리자'),
+(2, '마케팅팀'),
+(3, '운영팀');
+
+
+INSERT INTO `NOTICE` VALUES (1, '서비스 점검 안내', 1);
+INSERT INTO `NOTICE` VALUES (2, '이벤트 안내', 2);
+INSERT INTO `NOTICE` VALUES (3, '새로운 기능 추가 안내', 1);
+INSERT INTO `NOTICE` VALUES (4, '결제 시스템 업그레이드 안내', 3);
+INSERT INTO `NOTICE` VALUES (5, '서비스 이용약관 변경 안내', 3);
+
+
+INSERT INTO `VISITOR`  VALUES (1, 1, '홍길동');
+INSERT INTO `VISITOR` VALUES (2, 1, '김영희');
+INSERT INTO `VISITOR` VALUES (3, 2, '백지영');
+INSERT INTO `VISITOR` VALUES (4, 2, '최민호');
+INSERT INTO `VISITOR` VALUES (5, 2, '송지현');
+INSERT INTO `VISITOR` VALUES (6, 3, '장성우');
+INSERT INTO `VISITOR` VALUES (7, 4, '백지영');
+INSERT INTO `VISITOR` VALUES (8, 4, '최민호');
+INSERT INTO `VISITOR` VALUES (9, 4, '임현서');
+INSERT INTO `VISITOR` VALUES (10, 5, '강수민');
+INSERT INTO `VISITOR` VALUES (11, 5, '백지영');
+INSERT INTO `VISITOR` VALUES (12, 5, '박정희');
+
+
+commit;
