@@ -1,4 +1,3 @@
-
 use db_members_info_seokwon;
 
 -- MEMBER_DEFAULT 테이블 데이터 삽입
@@ -43,15 +42,17 @@ commit;
 
 -- MEMBER_HOBBY 테이블 데이터 삽입
 
+DROP TABLE MEMBER_HOBBY;
+
 INSERT INTO `MEMBER_HOBBY` (`MEMBER_HOBBY_ID`, `MEMBER_DEFAULT_ID`, `HOBBY_ID`) VALUES
 (1, 1, 1),
 (2, 1, 2),
-(3, 2, 2),
-(4, 3, 2),
-(5, 4, 2),
-(6, 5, 3),
-(7, 5, 6),
-(8, 4, 7),
+(3, 2, 3),
+(4, 2, 4),
+(5, 3, 5),
+(6, 3, 6),
+(7, 4, 7),
+(8, 4, 8),
 (9, 5, 9),
 (10, 5, 10);
 
