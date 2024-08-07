@@ -1,0 +1,44 @@
+
+### outer join
+
+select
+e.EmployeeID as EmployeeID,
+LastName,
+FirstName,
+BirthDate,
+Photo,
+Notes
+from
+Employees e
+left join
+(SELECT
+EmployeeID,
+OrderID
+FROM
+Orders o
+INNER JOIN
+Customers c
+on
+o.CustomerID = c.CustomerID) j
+on
+e.EmployeeID = j.EmployeeID
+where
+OrderID is null
+;
+
+### not in
+
+select
+*
+from
+Employees e
+where
+e.EmployeeID NOT IN (SELECT
+EmployeeID
+FROM
+Orders o
+INNER JOIN
+Customers c
+on
+o.CustomerID = c.CustomerID);
+

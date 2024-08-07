@@ -1,0 +1,32 @@
+select
+e.EmployeeID as EmployeeID,
+LastName,
+FirstName,
+BirthDate,
+Photo,
+Notes,
+count(*) as Order_Count
+from
+Employees e
+left join
+(SELECT
+EmployeeID,
+OrderID
+FROM
+Orders o
+INNER JOIN
+Customers c
+on
+o.CustomerID = c.CustomerID) j
+on
+e.EmployeeID = j.EmployeeID
+Group By
+e.EmployeeID,
+LastName,
+FirstName,
+BirthDate,
+Photo,
+Notes
+Order by
+count(*) desc
+;
