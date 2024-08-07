@@ -1,0 +1,73 @@
+
+use db_members_info_seokwon;
+
+-- MEMBER_DEFAULT 테이블 데이터 삽입
+
+INSERT INTO `MEMBER_DEFAULT` (`MEMBER_DEFAULT_ID`, `NAME`, `AGE`, `GENDER`, `PHONE_NUM`, `EMAIL`) VALUES
+(1, '홍길동', 30, '남', '010-1234-5678', 'hong@example.com'),
+(2, '김영희', 25, '여', '010-9876-5432', 'kim@example.com'),
+(3, '이철수', 35, '남', '010-2468-1357', 'lee@example.com'),
+(4, '박민준', 28, '남', '010-8642-9137', 'park@example.com'),
+(5, '임지영', 32, '여', '010-5793-6241', 'lim@example.com');
+
+select * from MEMBER_DEFAULT;
+commit;
+
+-- HOBBY 테이블 데이터 삽입
+
+INSERT INTO `HOBBY` (`HOBBY_ID`, `HOBBY_NAME`) VALUES
+(1, '등산'),
+(2, '요리'),
+(3, '음악감상'),
+(4, '수영'),
+(5, '영화감상'),
+(6, '자전거'),
+(7, '요가'),
+(8, '그림 그리기'),
+(9, '독서'),
+(10, '공원 산책');
+
+select * from HOBBY;
+commit;
+
+-- ADDRESS 테이블 데이터 삽입
+INSERT INTO `ADDRESS` (`ADDRESS_ID`, `ADDRESS_NAME`) VALUES
+(1, '서울특별시 강남구'),
+(2, '경기도 수원시'),
+(3, '인천광역시 부평구'),
+(4, '대전광역시 서구'),
+(5, '경상북도 포항시 북구');
+
+select * from ADDRESS;
+commit;
+
+-- MEMBER_HOBBY 테이블 데이터 삽입
+
+INSERT INTO `MEMBER_HOBBY` (`MEMBER_HOBBY_ID`, `MEMBER_DEFAULT_ID`, `HOBBY_ID`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 2),
+(4, 3, 2),
+(5, 4, 2),
+(6, 5, 3),
+(7, 5, 6),
+(8, 4, 7),
+(9, 5, 9),
+(10, 5, 10);
+
+select * from MEMBER_HOBBY;
+commit;
+
+-- MEMBER_ADDRESS 테이블 데이터 삽입
+INSERT INTO `MEMBER_ADDRESS` (`MEMBER_ADDRESS_ID`, `MEMBER_DEFAULT_ID`, `ADDRESS_ID`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 2),
+(4, 3, 3),
+(5, 4, 4),
+(6, 5, 5),
+(7, 5, 4);
+
+
+select * from MEMBER_ADDRESS;
+commit;
